@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - NovaCloud</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body class="auth-page">
+
+<div class="auth-box">
+
+    <div class="logo">
+        NovaCloud
+    </div>
+
+    <h1>
+        Welcome back
+    </h1>
+
+    <p class="auth-description">
+        Sign in to your NovaCloud account.
+    </p>
+
+
+    {% if error %}
+
+    <div class="error">
+        {{ error }}
+    </div>
+
+    {% endif %}
+
+
+    <form method="POST">
+
+        <label for="username">
+            Username
+        </label>
+
+        <input
+            id="username"
+            type="text"
+            name="username"
+            placeholder="Enter your username"
+            required
+        >
+
+
+        <label for="password">
+            Password
+        </label>
+
+        <input
+            id="password"
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+        >
+
+
+        <button type="submit">
+            Sign in
+        </button>
+
+    </form>
+
+
+    <p class="switch">
+        Don't have an account?
+
+        <a href="{{ url_for('register') }}">
+            Create account
+        </a>
+    </p>
+
+</div>
+
+</body>
+</html>
